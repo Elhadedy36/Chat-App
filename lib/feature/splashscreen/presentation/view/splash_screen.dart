@@ -1,4 +1,5 @@
 import 'package:chat_app/core/functions/navigation.dart';
+import 'package:chat_app/core/utils/app_assets.dart';
 import 'package:chat_app/core/utils/app_strings.dart';
 import 'package:flutter/material.dart';
 
@@ -22,7 +23,7 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold
     (
-      body: Center(child: Text(AppStrings.appName)),
+      body: Center(child: Image.asset(Assets.imagesChat)),
     );
   }
 }
