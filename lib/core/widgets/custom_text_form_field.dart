@@ -10,15 +10,23 @@ class CustomTextFormField extends StatelessWidget {
       this.onChanged,
       this.obscureText,
       this.suffixIcon,
-      this.prefixIcon});
+      this.prefixIcon, required this.controller});
   final String labelText;
   final Function(String)? onChanged;
   final bool? obscureText;
   final Widget? suffixIcon;
   final Widget? prefixIcon;
+ final TextEditingController controller;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return 'Please enter some text';
+        }
+        return null;
+      },
       obscureText: obscureText ?? false,
       decoration: InputDecoration(
           suffixIcon: suffixIcon,
