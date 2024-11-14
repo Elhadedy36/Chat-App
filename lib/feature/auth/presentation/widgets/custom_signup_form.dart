@@ -69,16 +69,7 @@ class CustomSignUpForm extends StatelessWidget {
                         }
                       },
                     ),
-              SizedBox(
-                height: 20,
-              ),
-              DontHaveAnnAccountWidget(
-                text1: AppStrings.alreadyhaveannaccount,
-                text2: AppStrings.SignIn,
-                onTap: () {
-                  customNavigaeReplacement(context, path: '/signIn');
-                },
-              ),
+              
             ],
           ),
         );

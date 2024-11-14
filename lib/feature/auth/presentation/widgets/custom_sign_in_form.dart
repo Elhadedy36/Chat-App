@@ -1,4 +1,5 @@
 import 'package:chat_app/core/functions/custom_toast.dart';
+import 'package:chat_app/core/functions/navigation.dart';
 import 'package:chat_app/core/utils/app_strings.dart';
 import 'package:chat_app/core/widgets/custom_button.dart';
 import 'package:chat_app/core/widgets/custom_text_form_field.dart';
@@ -46,15 +47,16 @@ class CustomSignInForm extends StatelessWidget {
                       text: AppStrings.SignIn,
                       textcolor: Colors.white,
                       color: Colors.lightBlue,
-                      onPressed: () {
+                      onPressed: () async {
                         if (context
                             .read<AuthCubit>()
                             .SignInKey
                             .currentState!
                             .validate()) {
-                          context
+                          await context
                               .read<AuthCubit>()
                               .SignInWithEmailAndPassword();
+                          customNavigaeReplacement(context, path: '/chatView');
                         }
                       },
                     ),

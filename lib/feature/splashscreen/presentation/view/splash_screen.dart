@@ -16,14 +16,27 @@ class _SplashScreenState extends State<SplashScreen> {
     // TODO: implement initState
     super.initState();
     Future.delayed(Duration(seconds: 3), () {
-  customNavigaeReplacement(context,path:  '/signIn');
+      
+      customNavigaeReplacement(context, path: '/signIn');
     });
   }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold
-    (
-      body: Center(child: Image.asset(Assets.imagesChat)),
+    return Scaffold(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Center(child: Image.asset(Assets.imagesChat)),
+          Text(
+            AppStrings.appName,
+            style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+                color: const Color.fromARGB(255, 16, 96, 162)),
+          )
+        ],
+      ),
     );
   }
 }

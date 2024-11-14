@@ -1,6 +1,7 @@
 import 'package:chat_app/feature/auth/presentation/cubit/cubit/auth_cubit.dart';
 import 'package:chat_app/feature/auth/presentation/view/sign_in_view.dart';
 import 'package:chat_app/feature/auth/presentation/view/sign_up_view.dart';
+import 'package:chat_app/feature/chat/presentation/view/chat_view.dart';
 import 'package:chat_app/feature/splashscreen/presentation/view/splash_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -19,4 +20,7 @@ final GoRouter router = GoRouter(routes: [
             create: (context) => AuthCubit(),
             child: const SignUpView(),
           )),
+  GoRoute(
+      path: '/chatView',
+      builder: (context, state) => const ChatView()),
 ]);
